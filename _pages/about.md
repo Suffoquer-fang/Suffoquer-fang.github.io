@@ -9,34 +9,51 @@ redirect_from:
 ---
 I am now a second year master student at [THUIR](http://thuir.cn), Department of Computer Science and Technology, Tsinghua University. My supervisor is Prof. [Yiqun Liu](http://www.thuir.cn/group/~YQLiu/). My major research interests are about dense retrieval and domain transfer.
 
+
+### Table 1
+
+| Entry            | Item   |                                                              |
+| --------         | ------ | ------------------------------------------------------------ |
+| [John Doe](#)    | 2016   | Description of the item in the list                          |
+| [Jane Doe](#)    | 2019   | Description of the item in the list                          |
+| [Doe Doe](#)     | 2022   | Description of the item in the list                          |
+
+### Table 2
+
+| Header1 | Header2 | Header3 |
+|:--------|:-------:|--------:|
+| cell1   | cell2   | cell3   |
+| cell4   | cell5   | cell6   |
+|-----------------------------|
+| cell1   | cell2   | cell3   |
+| cell4   | cell5   | cell6   |
+|=============================|
+| Foot1   | Foot2   | Foot3   |
+
+
 Education
 ======
 
 | Year | Education |
 | :------ | :------ | 
 | *09.2021-present* | M.S. student, Department of Computer Science and Technology, Tsinghua University, China. |
+
 * ***09.2017-06.2021***, B.E., Department of Computer Science and Technology, Tsinghua University, China.
 
 Publications
 =====
 
 * **Joint Optimization of Multi-vector
-Representation with Product Quantization**
-
-  **Yan Fang**, Jingtao Zhan, Yiqun Liu, Jiaxin Mao, Min Zhang, Shaoping Ma.
-
+Representation with Product Quantization** \
+  **Yan Fang**, Jingtao Zhan, Yiqun Liu, Jiaxin Mao, Min Zhang, Shaoping Ma. \
   NLPCC 2022 [Preprint Version]()
 
-* **Axiomatically Regularized Pre-training for Ad hoc Search**
-
-  Jia Chen, Yiqun Liu, **Yan Fang**, Jiaxin Mao, Hui Fang, Shenghao Yang, Xiaohui Xie, Min Zhang, Shaoping Ma.
-
+* **Axiomatically Regularized Pre-training for Ad hoc Search** \
+  Jia Chen, Yiqun Liu, **Yan Fang**, Jiaxin Mao, Hui Fang, Shenghao Yang, Xiaohui Xie, Min Zhang, Shaoping Ma. \
   SIGIR 2022 (Full, Acceptance Rate: 20.3%). [Preprint Version](https://xuanyuan14.github.io/files/SIGIR22Chen.pdf)
 
-* **ConvLab-2: An Open-Source Toolkit for Building, Evaluating, and Diagnosing Dialogue Systems**
-
-  Qi Zhu, Zheng Zhang, **Yan Fang**, Xiang Li, Ryuichi Takanobu, Jinchao Li, Baolin Peng, Jianfeng Gao, Xiaoyan Zhu, Minlie Huang
-
+* **ConvLab-2: An Open-Source Toolkit for Building, Evaluating, and Diagnosing Dialogue Systems** \
+  Qi Zhu, Zheng Zhang, **Yan Fang**, Xiang Li, Ryuichi Takanobu, Jinchao Li, Baolin Peng, Jianfeng Gao, Xiaoyan Zhu, Minlie Huang \
   ACL 2020 (Demo). [Preprint Version](https://arxiv.org/abs/2002.04793)
 
 
