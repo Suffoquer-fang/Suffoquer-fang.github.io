@@ -23,7 +23,7 @@ Publications
 | **Joint Optimization of Multi-vector Representation with Product Quantization** |
 | :------ |
 | **Yan Fang**, Jingtao Zhan, Yiqun Liu, Jiaxin Mao, Min Zhang, Shaoping Ma. |
-| NLPCC 2022 [Preprint Version]() |
+| NLPCC 2022 [Preprint Version](https://Suffoquer-fang.github.io/files/jmpq_nlpcc.pdf) |
 
 | **Axiomatically Regularized Pre-training for Ad hoc Search** |
 | :------ |
