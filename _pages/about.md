@@ -19,6 +19,7 @@ Education
 
 Publications
 =====
+
 | **Combining Multiple Supervision for Robust Zero-shot Dense Retrieval** |
 | :------ |
 | **Yan Fang**, Qingyao Ai, Jingtao Zhan, Yiqun Liu, Xiaolong Wu, Zhao Cao. |
