@@ -19,6 +19,10 @@ Education
 
 Publications
 =====
+| **Combining Multiple Supervision for Robust Zero-shot Dense Retrieval** |
+| :------ |
+| **Yan Fang**, Qingyao Ai, Jingtao Zhan, Yiqun Liu, Xiaolong Wu, Zhao Cao. |
+| AAAI 2024 (Full). [Preprint Version](https://Suffoquer-fang.github.io/files/AAAI24-CameraReady-10601.pdf) |
 
 | **Joint Optimization of Multi-vector Representation with Product Quantization** |
 | :------ |
