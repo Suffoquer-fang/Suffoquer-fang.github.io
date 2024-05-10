@@ -7,7 +7,7 @@ redirect_from:
   - /about/
   - /about.html
 ---
-I am now a second year master student at [THUIR](http://thuir.cn), Department of Computer Science and Technology, Tsinghua University. My supervisor is Prof. [Yiqun Liu](http://www.thuir.cn/group/~YQLiu/). My major research interests are about dense retrieval and domain transfer.
+I am now a third year master student at [THUIR](http://thuir.cn), Department of Computer Science and Technology, Tsinghua University. My supervisor is Prof. [Yiqun Liu](http://www.thuir.cn/group/~YQLiu/) and Prof. [Min Zhang](http://www.thuir.cn/group/~mzhang/). My major research interests are about dense retrieval and domain transfer.
 
 Education
 ======
@@ -19,6 +19,10 @@ Education
 
 Publications
 =====
+| **Scaling Law for Dense Retrieval** |
+| :------ |
+| **Yan Fang**, Jingtao Zhan, Qingyao Ai, Jiaxin Mao, Weihang Su, Jia Chen, Yiqun Liu. |
+| SIGIR 2024 (Full). [Preprint Version](https://arxiv.org/abs/2403.18684) |
 
 | **Combining Multiple Supervision for Robust Zero-shot Dense Retrieval** |
 | :------ |
@@ -28,7 +32,7 @@ Publications
 | **Joint Optimization of Multi-vector Representation with Product Quantization** |
 | :------ |
 | **Yan Fang**, Jingtao Zhan, Yiqun Liu, Jiaxin Mao, Min Zhang, Shaoping Ma. |
-| NLPCC 2022 [Preprint Version](https://Suffoquer-fang.github.io/files/jmpq_nlpcc.pdf) |
+| NLPCC 2022 (Full) [Preprint Version](https://Suffoquer-fang.github.io/files/jmpq_nlpcc.pdf) |
 
 | **Axiomatically Regularized Pre-training for Ad hoc Search** |
 | :------ |
