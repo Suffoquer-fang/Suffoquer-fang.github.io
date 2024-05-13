@@ -4,7 +4,7 @@ SEOTitle: Jekyll theme Gungnir
 description: Jekyll version of the blog theme Gungnir.
 keyword: "jekyll, theme, blog, blog theme"
 url: "https://github.com/Suffoquer-fang/jekyll-theme-gungnir/blob/main"      # your host, for absolute URL
-baseurl: ""                                         # for example, '/blog' if your blog hosted on 'host/blog'
+baseurl: "/jekyll-theme-gungnir"                                         # for example, '/blog' if your blog hosted on 'host/blog'
 avatar: "img/header-avatar.jpeg"                    # the avatar showing on the homepage
 
 
