@@ -3,13 +3,13 @@ title: Gungnir
 SEOTitle: Jekyll theme Gungnir
 description: Jekyll version of the blog theme Gungnir.
 keyword: "jekyll, theme, blog, blog theme"
-url: "https://jekyll-theme-gungnir.vercel.app"      # your host, for absolute URL
+url: "https://suffoquer-fang.github.io/jekyll-theme-gungnir"      # your host, for absolute URL
 baseurl: ""                                         # for example, '/blog' if your blog hosted on 'host/blog'
 avatar: "img/header-avatar.jpeg"                    # the avatar showing on the homepage
 
 
 # GitHub repository (if the site is hosted by GitHub)
-repository: Renovamen/jekyll-theme-gungnir
+repository: Suffoquer-fang/jekyll-theme-gungnir
 repository_branch: main
 
 
@@ -54,7 +54,7 @@ collections:
 # SNS settings
 sns:
   RSS: true
-  github_username: Renovamen
+  github_username: Suffoquer-fang
   weibo_username:
   zhihu_username: chao-neng-gui-su
   twitter_username: renovamen_zxh
