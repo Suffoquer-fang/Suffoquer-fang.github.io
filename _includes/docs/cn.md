@@ -280,7 +280,7 @@ emoji-plus: # 是否启用附加表情：false (default), true
 ### 一言
 
 ```yaml
-hitokoto: true # default: false
+hitokoto: false # default: false
 ```
 
 将 `hitokoto` 设为 `true` 可以开启首页的[一言](https://hitokoto.cn/){:target="_blank"}气泡，将鼠标悬浮在头像上气泡就会显示出来：

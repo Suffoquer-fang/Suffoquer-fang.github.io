@@ -10,16 +10,22 @@ layout: default
 
   <!-- Publication Section -->
   {% if site.publications.size > 0 %}
-    {% include about/publications.html %}
+    <!-- {% include about/projects.html %} -->
+    <div class="section">
+      <div class="post-container">
+        {% capture about_other %}{% include about/md/publications.md %}{% endcapture %}
+        {{ about_other | markdownify }}
+      </div>
+    </div>
   {% endif %}
 
   <!-- Experience Section -->
-  {% if site.experiences.size > 0 %}
+  <!-- {% if site.experiences.size > 0 %}
     {% include about/experiences.html %}
-  {% endif %}
+  {% endif %} -->
 
   <!-- Projects Section -->
-  {% if site.projects.size > 0 %}
+  <!-- {% if site.projects.size > 0 %}
     {% include about/projects.html %}
   {% endif %}
 
@@ -28,5 +34,5 @@ layout: default
       {% capture about_other %}{% include about/md/other.md %}{% endcapture %}
       {{ about_other | markdownify }}
     </div>
-  </div>
+  </div> -->
 </div>

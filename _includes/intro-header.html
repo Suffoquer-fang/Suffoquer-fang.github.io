@@ -84,7 +84,7 @@
           {% comment %} always create a h2 for keeping the margin {% endcomment %}
           <h2 class="subheading">{{ page.subtitle }}</h2>
           {% if page.hide-author != true %}
-          <span class="meta">Posted by {% if page.author %}{{ page.author }}{% else %}{{ site.title }}{% endif %} on {{ page.date | date: "%B %-d, %Y" }}</span>
+          <span class="meta">Posted by {% if page.author %}{{ page.author }}{% else %} Suffoquer {% endif %} on {{ page.date | date: "%Y-%m-%d" }}</span>
           {% endif %}
         </div>
       </div>
@@ -126,8 +126,8 @@
           {% comment %} always create a h2 for keeping the margin {% endcomment %}
           <h2 class="subheading">{{ page.subtitle }}</h2>
           <span class="meta">
-            Posted by {% if page.author %}{{ page.author }}{% else %}{{ site.title }}{% endif %}
-            on {{ page.date | date: "%B %-d, %Y" }}
+            Posted by {% if page.author %}{{ page.author }}{% else %} Suffoquer {% endif %}
+            on {{ page.date | date: "%Y-%m-%d" }}
           </span>
         </div>
       </div>
@@ -161,14 +161,20 @@
     </a>
   </div>
 
-  {% if site.hitokoto %}
+  <!-- {% if site.hitokoto %}
   <div class="header-bubble">
     <div class="bubble">
       <p class="bubble-words" id="hitokoto">正在加载一言...</p>
     </div>
     <div class="bubble-tile"></div>
   </div>
-  {% endif %}
+  {% endif %} -->
+  <div class="header-bubble">
+    <div class="bubble">
+      <p class="bubble-words" id="myhitokoto">写出来的那能叫心里话吗？</p>
+    </div>
+    <div class="bubble-tile"></div>
+  </div>
 
   <!-- Only shows on desktop -->
   <div class="header-info">

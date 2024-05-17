@@ -1,11 +1,11 @@
 # Site settings
-title: Gungnir
-SEOTitle: Jekyll theme Gungnir
-description: Jekyll version of the blog theme Gungnir.
-keyword: "jekyll, theme, blog, blog theme"
+title: Suffoquer's Blog
+SEOTitle: Suffoquer's Blog
+description: 正经人谁写博客啊
+# keyword: "blog, blog theme"
 url: "https://suffoquer-fang.github.io"      # your host, for absolute URL
 baseurl: ""                                         # for example, '/blog' if your blog hosted on 'host/blog'
-avatar: "img/header-avatar.jpeg"                    # the avatar showing on the homepage
+avatar: "img/avatar-pig.png"                    # the avatar showing on the homepage
 
 
 # GitHub repository (if the site is hosted by GitHub)
@@ -17,7 +17,7 @@ repository_branch: main
 theme_style:
   highlight:    # "dark" (default), "light"
   alert:        # "flat" (default), "modern"
-  post_preview: # "image" (default), "text"
+  post_preview: text # "image" (default), "text"
                 # display post's featured image on homepage or not
 
 
@@ -34,8 +34,8 @@ emoji-plus: true  # false (default), true
 
 # CDN settings
 cdn:
-  source:       # "jsdelivr" (default), "bootcdn", "unpkg", "cdnjs"
-  enable:       # false (default), true
+  source: jsdelivr      # "jsdelivr" (default), "bootcdn", "unpkg", "cdnjs"
+  enable: true      # false (default), true
                 # optimizing asset files via jsDelivr or not
 
 
@@ -56,11 +56,11 @@ sns:
   RSS: true
   github_username: Suffoquer-fang
   weibo_username:
-  zhihu_username: chao-neng-gui-su
-  twitter_username: renovamen_zxh
-  facebook_username: renovamen.zou
-  linkedin_username: xiaohan-zou-55bba0160
-  email_address: renovamenzxh@gmail.com
+  zhihu_username: fds-65
+  # twitter_username: renovamen_zxh
+  # facebook_username: renovamen.zou
+  # linkedin_username: xiaohan-zou-55bba0160
+  email_address: 1161290791@qq.com
 
 
 # Build settings
@@ -80,7 +80,7 @@ exclude:
   - /node_modules
 anchorjs: true  # if you want to customize anchor. check out `anchor.html`
 # If you have timezone issue (e.g. #68) in China, uncomment to use this:
-# timezone: CN
+timezone: CN
 
 
 # Gems
@@ -105,38 +105,38 @@ menus:
     url: /
   - title: About
     font: fas fa-paw
-    submenus:
-      - title: Me
-        font: fas fa-user-astronaut
-        url: /about/
-      - title: Theme
-        font: fas fa-meteor
-        url: /theme/
+    # submenus:
+      # - title: Me
+      #   font: fas fa-user-astronaut
+    url: /about/
+      # - title: Theme
+      #   font: fas fa-meteor
+      #   url: /theme/
   - title: Archive
     font: fas fa-archive
     url: /archive/
-  - title: Links
-    font: fas fa-link
-    url: /links/
+  # - title: Links
+  #   font: fas fa-link
+  #   url: /links/
 
 
 # Comment settings
 comment:
-  provider: gitalk # false (default), "disqus", "gitalk", "valine"
+  provider: false # false (default), "disqus", "gitalk", "valine"
 
   # Disqus settings
-  disqus_username: renovamen
+  # disqus_username: renovamen
 
   # Gitalk settings
   # https://github.com/gitalk/gitalk
-  gitalk:
-    clientID: 'faf464da633b08ff5317'
-    clientSecret: '402324fc860894e5fcba6320fddbddd1ec7f5644'
-    repo: gitalk-comments
-    owner: This-is-an-Apple
-    admin:
-      - Renovamen
-      - This-is-an-Apple
+  # gitalk:
+  #   clientID: 'faf464da633b08ff5317'
+  #   clientSecret: '402324fc860894e5fcba6320fddbddd1ec7f5644'
+  #   repo: gitalk-comments
+  #   owner: This-is-an-Apple
+  #   admin:
+  #     - Renovamen
+  #     - This-is-an-Apple
 
   # Valine settings
   # https://valine.js.org/

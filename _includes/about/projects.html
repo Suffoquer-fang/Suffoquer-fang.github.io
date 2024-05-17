@@ -16,7 +16,7 @@
       </h2>
       <p>
         {% if proj.lang == 'en' %}
-          {{ post.content | strip_html | truncate:250 }}
+          {{ post.content | truncate:250 }}
         {% else %}
           {{ proj.content | strip_html | truncate:150 }}
         {% endif %}
