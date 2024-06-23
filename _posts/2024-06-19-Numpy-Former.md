@@ -230,7 +230,7 @@ Epoch 100, Iteration 30, Loss 0.002122699694332097
 ```shell
 Input values:
  [[0.1 0.2 0.3 0.4 0.5]
- [0.2 0.4 0.6 0.8 1. ]]
+ [0.2 0.4 0.6 0.8 1.0 ]]
 
 True values:
  [[0.9 0.4]
@@ -261,9 +261,6 @@ PE_{(pos, 2i+1)} = \cos(pos / 10000^{2i / d_{model}})
 $$
 
 论文也提到说可以用learned positional embedding，结果差不多。BERT里用的是后者，所以无法接受比训练时候更长的序列。
-
-```python
-```
 
 #### Multi-Head Attention
 
@@ -320,4 +317,69 @@ def backward(self, grad_output):
 只要注意一下维度变化，多个head直接concat起来，所以需要一直reshape和transpose。
 
 #### Feed Forward
+
+这个更简单，两个线性层加上一个ReLU。
+    
+```python
+def forward(self, x, train=True):
+    # x: (batch_size, seq_len, d_model)
+    self.x = x
+    x = self.linear1.forward(x)
+    x = self.activation.forward(x)
+    x = self.dropout.forward(x, train)
+    x = self.linear2.forward(x)
+    return x
+
+def backward(self, grad_output):
+    grad_output = self.linear2.backward(grad_output)
+    grad_output = self.activation.backward(grad_output)
+    grad_output = self.dropout.backward(grad_output)
+    grad_output = self.linear1.backward(grad_output)
+    return grad_output
+```
+
 #### Layer Normalization
+
+Layer Normalization是最难写的部分，forward相对来说简单一些，只是做了一个均值和方差下的归一化，再用一组参数放缩和平移。
+
+backward就比较复杂了，找了几个资料但是算出来的梯度和PyTorch对拍之后都有出入，最后没办法，还是得自己硬算。
+
+$$
+\hat{x} = {x - \mu \over \sqrt{\sigma^2 + \epsilon}} \approx {x - \mu \over \sigma}\\
+y = \gamma \cdot \hat{x} + \beta\\
+\mu = {1 \over N} \sum_{i=1}^{N} x_i~,~~\sigma^2 = {1 \over N} \sum_{i=1}^{N} (x_i - \mu)^2
+$$
+
+对于参数$\gamma$和$\beta$的梯度，会比较简单
+
+$$
+{\partial L \over \partial \gamma} = \sum_{i=1}^{N} {\partial L \over \partial y_i} \cdot \hat{x}_i\\
+{\partial L \over \partial \beta} = \sum_{i=1}^{N} {\partial L \over \partial y_i}
+$$
+
+接着来推导一下对于$x$的梯度，翻出了当年统计机器学习课的作业。<s>感叹一下我那时候是真能暴力推导</s>
+
+<img src="/img/in-post/2024-06-19/layernorm_grad.png" alt="Layer Normalization" style="zoom:30%;center;" />
+
+<!-- $$
+\begin{align}
+{\partial L \over \partial x_i} &= {\partial L \over \partial y} \cdot {\partial y \over \partial \hat{x}} \cdot {\partial \hat{x} \over \partial x_i}\\
+&= {\partial L \over \partial y} \cdot \gamma \cdot {\partial \hat{x} \over \partial x_i}\\
+&= {\partial L \over \partial y} \cdot \gamma \cdot \left( {1\over \sigma} + {\partial \hat{x} \over \partial \mu} \cdot {\partial \mu \over \partial x_i} + {\partial \hat{x} \over \partial \sigma} \cdot {\partial \sigma \over \partial x_i} \right)\\
+&= {\partial L \over \partial y} \cdot \gamma \cdot \left( {1\over \sigma} - {1 \over N\sigma} - {(x_i - \mu) \over \sigma^2} \right)\\
+\end{align}
+$$ -->
+最后化简一下，剩下的形式是这样：
+
+$$
+{\partial L \over \partial x} =  {\partial L \over \partial \hat{x}} - {1\over N} \sum_i {\partial L \over \partial \hat{x}} - \hat{x} \cdot  {1 \over N}\sum_i ({\partial L \over \partial \hat{x}} \cdot \hat{x})
+$$
+
+```python
+grad_norm = grad_output * self.gamma
+grad_input = grad_norm \
+ - grad_norm.mean(self.axis, keepdims=True) \
+ - self.x_hat * (grad_norm * self.x_hat).mean(self.axis, keepdims=True)
+grad_input *= self.std_inv
+```
+

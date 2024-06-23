@@ -115,14 +115,12 @@ menus:
   - title: Archive
     font: fas fa-archive
     url: /archive/
-  # - title: Links
-  #   font: fas fa-link
-  #   url: /links/
+  
 
 
 # Comment settings
 comment:
-  provider: false # false (default), "disqus", "gitalk", "valine"
+  provider: valine # false (default), "disqus", "gitalk", "valine"
 
   # Disqus settings
   # disqus_username: renovamen
@@ -141,17 +139,15 @@ comment:
   # Valine settings
   # https://valine.js.org/
   valine:
-    appID:
-    appKey:
+    appID: d5Ab23kXMlklVNRMUJRpaEQn-gzGzoHsz
+    appKey: iu7t4patqbjMW0HxXDMhKR4c
 
 
 # Analytics settings
 analytics:
   # Baidu Analytics
-  ba_track_id: 00504d7a0bf51278aa92b36e60e830b5 # [your baidu track id]
+  ba_track_id: 66662b38603eae06a90c166fed340c01 # [your baidu track id]
 
-  # Google Analytics
-  ga_track_id: 'G-ZYM02DSEHS'               # [your google track id]
 
 
 # Progressive Web Apps
