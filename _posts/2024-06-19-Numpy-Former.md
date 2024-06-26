@@ -372,7 +372,7 @@ $$ -->
 最后化简一下，剩下的形式是这样：
 
 $$
-{\partial L \over \partial x} =  {\partial L \over \partial \hat{x}} - {1\over N} \sum_i {\partial L \over \partial \hat{x}} - \hat{x} \cdot  {1 \over N}\sum_i ({\partial L \over \partial \hat{x}} \cdot \hat{x})
+{\partial L \over \partial x} =  {\partial L \over \partial \hat{x}} - {1\over N} \sum_i {\partial L \over \partial \hat{x}} - \hat{x} \cdot  {1 \over N}\sum_i ({\partial L \over \partial \hat{x}} \cdot \hat{x}) 
 $$
 
 ```python
@@ -383,3 +383,76 @@ grad_input = grad_norm \
 grad_input *= self.std_inv
 ```
 
+
+#### Encoder
+
+现在，我们把这些部分组合堆叠起来，就可以得到一个完整的Transformer Encoder了。
+
+```python
+# Encoder Layer
+def forward(self, x, mask=None, train=False):
+    x_ = self.multi_head_attention.forward(x, x, x, mask)
+    x_ = self.dropout1.forward(x_, train)
+
+    x = x + x_
+    x = self.layer_norm1.forward(x)
+    
+    x_ = self.feed_forward.forward(x, train)
+    x_ = self.dropout2.forward(x_, train)
+
+    x = x + x_
+    x = self.layer_norm2.forward(x)
+
+    return x
+```
+
+### BERT
+现在让我们拿写好的东西，导入预训练好的BERT参数，看看能不能正常工作。
+
+首先得看一下BERT里面的结构，我这里选用了一个较小一些的模型[BERT-Tiny](https://huggingface.co/google/bert_uncased_L-2_H-128_A-2)，只有两层encoder，每层有两个attention head，hidden size是128。
+
+在Transformer Encoder之前，有标准的三种embedding，以及一个LayerNorm层（顺便这里还有一个Dropout）
+
+```shell
+bert.embeddings.word_embeddings.weight ([30522, 128])
+bert.embeddings.position_embeddings.weight ([512, 128])
+bert.embeddings.token_type_embeddings.weight ([2, 128])
+bert.embeddings.LayerNorm.weight ([128])
+bert.embeddings.LayerNorm.bias ([128])
+```
+
+然后是两个Encoder Layer
+```shell
+# attention
+bert.encoder.layer.0.attention.self.query.weight ([128, 128])
+bert.encoder.layer.0.attention.self.query.bias ([128])
+bert.encoder.layer.0.attention.self.key.weight ([128, 128])
+bert.encoder.layer.0.attention.self.key.bias ([128])
+bert.encoder.layer.0.attention.self.value.weight ([128, 128])
+bert.encoder.layer.0.attention.self.value.bias ([128])
+bert.encoder.layer.0.attention.output.dense.weight ([128, 128])
+bert.encoder.layer.0.attention.output.dense.bias ([128])
+bert.encoder.layer.0.attention.output.LayerNorm.weight ([128])
+bert.encoder.layer.0.attention.output.LayerNorm.bias ([128])
+
+# feed forward
+bert.encoder.layer.0.intermediate.dense.weight ([512, 128])
+bert.encoder.layer.0.intermediate.dense.bias ([512])
+bert.encoder.layer.0.output.dense.weight ([128, 512])
+bert.encoder.layer.0.output.dense.bias ([128])
+bert.encoder.layer.0.output.LayerNorm.weight ([128])
+bert.encoder.layer.0.output.LayerNorm.bias ([128])
+```
+
+最后是一个prediction head
+```shell
+cls.predictions.bias ([30522])
+cls.predictions.transform.dense.weight ([128, 128])
+cls.predictions.transform.dense.bias ([128])
+cls.predictions.transform.LayerNorm.weight ([128])
+cls.predictions.transform.LayerNorm.bias ([128])
+cls.predictions.decoder.weight ([30522, 128])
+cls.predictions.decoder.bias ([30522])
+```
+
+看了下transformers的源码，这里的decoder.bias和bias是一样的。decoder的weights是与word_embeddings的weights保持一致的。所以本质上，这里就是对输出的embedding和word embeddings做了内积，然后加上了bias（没有bias的话其实是一个检索的过程）
