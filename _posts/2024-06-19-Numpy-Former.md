@@ -456,3 +456,5 @@ cls.predictions.decoder.bias ([30522])
 ```
 
 看了下transformers的源码，这里的decoder.bias和bias是一样的。decoder的weights是与word_embeddings的weights保持一致的。所以本质上，这里就是对输出的embedding和word embeddings做了内积，然后加上了bias（没有bias的话其实是一个检索的过程）
+
+

@@ -12,6 +12,7 @@
 
 - **Yan Fang**, Qingyao Ai, Jingtao Zhan, Yiqun Liu, Xiaolong Wu and Zhao Cao. 2024. [Combining Multiple Supervision for Robust Zero-Shot Dense Retrieval.](https://ojs.aaai.org/index.php/AAAI/article/view/29755) In Proceedings of the AAAI Conference on Artificial Intelligence. 38, 16 (Mar. 2024), 17994–18002.
 
-- **Yan Fang**, Jingtao Zhan, Qingyao Ai, Jiaxin Mao, Weihang Su, Jia Chen and Yiqun Liu. 2024. [Scaling Laws For Dense Retrieval](https://arxiv.org/abs/2403.18684) In Proceedings of the 47th International ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR '24). 
+- **Yan Fang**, Jingtao Zhan, Qingyao Ai, Jiaxin Mao, Weihang Su, Jia Chen and Yiqun Liu. 2024. [Scaling Laws For Dense Retrieval](https://dl.acm.org/doi/10.1145/3626772.3657743) In Proceedings of the 47th International ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR '24 Best Paper). 
+    <img src="/img/publications/best_paper.png" alt="Best Paper" style="zoom:45%;center;" />
 
 &nbsp; &nbsp;
