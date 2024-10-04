@@ -1,0 +1,96 @@
+---
+layout: photo
+title: "Photo Gallery"
+description: "总要有地方存下照片的"
+active: gallery
+header-img: "img/links.jpg"
+header-mask: rgba(40, 57, 101, .4)
+images:
+- image_path: /img/gallery/taishan/richu.jpg
+  gallery-folder: /photo/taishan/
+  gallery-name: 山东-泰山
+  gallery-date: 2024-05-09
+- image_path: /img/gallery/high_school/03.jpg
+  gallery-folder: /photo/high_school/
+  gallery-name: 安徽-黄山
+  gallery-date: 2024-05-09
+---
+<!-- - image_path: /img/gallery/taishan/richu.jpg
+  gallery-folder: /photo/qingdao/
+  gallery-name: 山东-青岛
+  gallery-date: 2024-05-09
+- image_path: /img/gallery/taishan/richu.jpg
+  gallery-folder: /photo/graduation/
+  gallery-name: 毕业
+  gallery-date: 2024-05-09
+- image_path: /img/gallery/taishan/richu.jpg
+  gallery-folder: /photo/fudan/
+  gallery-name: 上海-复旦
+  gallery-date: 2024-05-09 -->
+
+
+<html class="no-js" lang="en">
+<head>
+	<meta content="charset=utf-8">
+    <link rel="stylesheet" href="{{ "/css/photo/selena.css" | prepend: site.baseurl }}">
+    <link rel="stylesheet" href="{{ "/css/photo/galleries.css" | prepend: site.baseurl }}">
+</head>
+
+
+    <body class="gallery">
+ 
+	<section id="content" role="main">
+		<div class="wrapper">
+	
+			<h2>{{page.title}}</h2>
+			
+			<!-- Gallery __-->
+			<div class="gallery masonry-gallery">
+				
+{% for image in page.images %}  	
+
+	               <figure class="gallery-item">
+                         <figure class="effect-selena">
+					<header class='gallery-icon'>
+		       
+<a href="{{ site.url }}{{ site.baseurl }}{{ image.gallery-folder }}">
+<img src="{{ site.url }}{{ site.baseurl }}{{ image.image_path }}"></a>
+
+					</header>	
+					<figcaption class='gallery-caption'>
+						<div class="entry-summary">
+                <h3 style="font-size: 25px;">{{image.gallery-name}}</h3>
+                <p style="font-size: 15px;">{{image.gallery-date}}</p>
+						</div>
+					</figcaption>
+                       </figure>
+				</figure>
+							
+{% endfor %}		
+				
+			</div>
+			
+		</div><!-- END .wrapper -->
+	</section>
+
+
+
+
+<!-- jQuery -->    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="{{ site.baseurl }}/js/photo/retina.min.js"></script>
+<!-- include Masonry -->
+<script src="{{ site.baseurl }}/js/photo/isotope.pkgd.min.js"></script> 
+<!-- include mousewheel plugins -->
+<script src="{{ site.baseurl }}/js/photo/jquery.mousewheel.min.js"></script>
+<!-- include carousel plugins -->
+<script src="{{ site.baseurl}}/js/photo/jquery.tinycarousel.min.js"></script>
+<!-- include svg line drawing plugin -->
+<script src="{{ site.baseurl }}/js/photo/jquery.lazylinepainter.min.js"></script>
+<!-- include custom script -->
+<script src="{{ site.baseurl }}/js/photo/scripts.js"></script>
+<!-- Modernizr -->
+ <script src="{{ site.baseurl }}/js/photo/modernizr.js"></script>
+
+</body></html>

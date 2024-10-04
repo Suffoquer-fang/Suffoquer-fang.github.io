@@ -116,6 +116,10 @@ menus:
     font: fas fa-archive
     url: /archive/
   
+  - title: Photo
+    font: fas fa-camera-retro
+    url: /photo/
+  
 
 
 # Comment settings

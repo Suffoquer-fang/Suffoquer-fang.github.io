@@ -1,0 +1,111 @@
+---
+layout: photo
+title: "山东-泰山"
+description: "2024-05-09"
+active: gallery
+header-img: img/theme.jpg
+header-mask: rgba(40, 57, 101, .4)
+album-title: "my 1st album"
+images:
+- image_path: /img/gallery/taishan/daminghu.jpg
+  caption: 大明湖
+- image_path: /img/gallery/taishan/baotuquan.jpg
+  caption: 趵突泉
+- image_path: /img/gallery/taishan/bar.jpg
+  caption: 小酒吧
+- image_path: /img/gallery/taishan/daimiao_qifu.jpg
+  caption: 岱庙
+- image_path: /img/gallery/taishan/zhongtianmen.jpg
+  caption: 中天门
+- image_path: /img/gallery/taishan/nantianmen.jpg
+  caption: 南天门
+- image_path: /img/gallery/taishan/riluo.jpg
+  caption: 日落
+- image_path: /img/gallery/taishan/richu.jpg
+  caption: 日出
+---
+
+<html class="no-js" lang="en">
+<head>
+	<meta content="charset=utf-8">
+    <link rel="stylesheet" href="{{ "/css/photo/selena.css" | prepend: site.baseurl }}">
+    <link rel="stylesheet" href="{{ "/css/photo/galleries.css" | prepend: site.baseurl }}">
+    <link rel="stylesheet" href="{{ "/css/photo/magnificpopup.css" | prepend: site.baseurl }}">
+</head>
+
+    <body>
+ 
+	<section id="content" role="main">
+		<div class="wrapper">
+	<br><br>
+
+
+			<!-- Gallery __-->
+			<div class="gallery masonry-gallery">
+		
+{% for image in page.images %}  		
+
+				<figure class="gallery-item">
+					<header class='gallery-icon'>
+
+<a href="{{ site.url }}{{ site.baseurl }}{{ image.image_path }}" class="popup"  title="{{ image.caption }}" data-caption="{{ image.copyright }}">
+<img src="{{ site.url }}{{ site.baseurl }}{{ image.image_path }}"></a>
+						
+					</header>	
+					<figcaption class='gallery-caption'>
+						<div class="entry-summary" id="{{ image.caption }}">
+							<!-- <h2 fon>{{image.caption}}</h2> -->
+                            <h2 style="font-size: 25px;">{{image.caption}}</h2>
+							<p style="font-size: 15px;">© Suffoquer</p>
+						</div>
+					</figcaption>
+				</figure>
+				
+{% endfor %}
+
+			</div>
+
+		</div><!-- END .wrapper -->
+	</section>
+
+<!-- jQuery -->    
+
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<!-- include image popups -->
+<script src="{{ site.baseurl }}/js/photo/jquery.magnific-popup.js"></script>
+
+<script type="text/javascript">
+      $(document).ready(function($) {
+        $('a.popup').magnificPopup({
+         type: 'image',
+	  gallery:{
+         enabled:true,
+         navigateByImgClick: true,
+         preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+       },
+image: {
+      titleSrc: function(item) {
+              return item.el.attr('title') + '&nbsp;' + item.el.attr('data-caption');
+            }
+        }
+          // other options
+      });
+});
+    </script>
+
+<script src="{{ site.baseurl }}/js/photo/retina.min.js"></script>
+<!-- include Masonry -->
+<script src="{{ site.baseurl }}/js/photo/isotope.pkgd.min.js"></script> 
+<!-- include mousewheel plugins -->
+<script src="{{ site.baseurl }}/js/photo/jquery.mousewheel.min.js"></script>
+<!-- include carousel plugins -->
+<script src="{{ site.baseurl}}/js/photo/jquery.tinycarousel.min.js"></script>
+<!-- include svg line drawing plugin -->
+<script src="{{ site.baseurl }}/js/photo/jquery.lazylinepainter.min.js"></script>
+<!-- include custom script -->
+<script src="{{ site.baseurl }}/js/photo/scripts.js"></script>
+<!-- Modernizr -->
+ <script src="{{ site.baseurl }}/js/photo/modernizr.js"></script>
+
+    
+</body></html>

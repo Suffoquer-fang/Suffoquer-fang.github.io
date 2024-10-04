@@ -1,0 +1,22 @@
+---
+layout: default
+---
+{% include intro-header.html type='page' %}
+
+{%- include utils/get-assets-baseurl.html -%}
+{%- assign _assets_baseurl = __return -%}
+
+
+<!-- Main Content -->
+<div class="container">
+	<div class="row">
+					{{ content }}
+	</div>
+</div>
+
+<!-- jQuery -->    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<!-- Custom Theme JavaScript -->
+<script src="{{ site.baseurl }}/js/photo/main.min.js "></script>
